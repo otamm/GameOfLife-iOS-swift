@@ -161,7 +161,7 @@
 				<key>displayName</key>
 				<string>CCBFile</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>grid</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>
@@ -352,7 +352,7 @@
 										<key>displayName</key>
 										<string>genscore</string>
 										<key>memberVarAssignmentName</key>
-										<string></string>
+										<string>genScore</string>
 										<key>memberVarAssignmentType</key>
 										<integer>1</integer>
 										<key>properties</key>
@@ -766,7 +766,7 @@
 										<key>displayName</key>
 										<string>popscore</string>
 										<key>memberVarAssignmentName</key>
-										<string></string>
+										<string>popScore</string>
 										<key>memberVarAssignmentType</key>
 										<integer>1</integer>
 										<key>properties</key>
@@ -1272,7 +1272,7 @@
 							</dict>
 							<dict>
 								<key>UUID</key>
-								<integer>11</integer>
+								<integer>10</integer>
 								<key>baseClass</key>
 								<string>CCButton</string>
 								<key>children</key>
@@ -1293,7 +1293,7 @@
 										<key>type</key>
 										<string>StringSimple</string>
 										<key>value</key>
-										<string></string>
+										<string>pause</string>
 									</dict>
 									<dict>
 										<key>name</key>
@@ -1302,8 +1302,8 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>26.779296875</real>
-											<real>-201.83546447753906</real>
+											<real>28.9033203125</real>
+											<real>43.923351287841797</real>
 											<integer>0</integer>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -1316,8 +1316,8 @@
 										<string>Point</string>
 										<key>value</key>
 										<array>
-											<real>0.2682756781578064</real>
-											<real>-11.852441787719727</real>
+											<real>0.2986188530921936</real>
+											<real>-4.8307614326477051</real>
 										</array>
 									</dict>
 									<dict>
@@ -1330,7 +1330,7 @@
 											<real>1</real>
 											<real>1</real>
 											<false/>
-											<integer>1</integer>
+											<integer>0</integer>
 										</array>
 									</dict>
 									<dict>
@@ -1340,7 +1340,7 @@
 										<string>Block</string>
 										<key>value</key>
 										<array>
-											<string></string>
+											<string>pause</string>
 											<integer>1</integer>
 										</array>
 									</dict>
@@ -1397,7 +1397,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>GameOfLifeAssets/Buttons/play.png</string>
+											<string>GameOfLifeAssets/Buttons/pause.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -1408,7 +1408,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>GameOfLifeAssets/Buttons/play-pressed.png</string>
+											<string>GameOfLifeAssets/Buttons/pause-pressed.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -1598,7 +1598,7 @@
 							</dict>
 							<dict>
 								<key>UUID</key>
-								<integer>10</integer>
+								<integer>11</integer>
 								<key>baseClass</key>
 								<string>CCButton</string>
 								<key>children</key>
@@ -1619,7 +1619,7 @@
 										<key>type</key>
 										<string>StringSimple</string>
 										<key>value</key>
-										<string></string>
+										<string>play</string>
 									</dict>
 									<dict>
 										<key>name</key>
@@ -1628,8 +1628,8 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>28.9033203125</real>
-											<real>86.923347473144531</real>
+											<real>26.779296875</real>
+											<real>-158.83546447753906</real>
 											<integer>0</integer>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -1642,8 +1642,8 @@
 										<string>Point</string>
 										<key>value</key>
 										<array>
-											<real>0.2986188530921936</real>
-											<real>-4.8307614326477051</real>
+											<real>0.2682756781578064</real>
+											<real>-11.852441787719727</real>
 										</array>
 									</dict>
 									<dict>
@@ -1656,7 +1656,7 @@
 											<real>1</real>
 											<real>1</real>
 											<false/>
-											<integer>0</integer>
+											<integer>1</integer>
 										</array>
 									</dict>
 									<dict>
@@ -1666,7 +1666,7 @@
 										<string>Block</string>
 										<key>value</key>
 										<array>
-											<string></string>
+											<string>play</string>
 											<integer>1</integer>
 										</array>
 									</dict>
@@ -1723,7 +1723,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>GameOfLifeAssets/Buttons/pause.png</string>
+											<string>GameOfLifeAssets/Buttons/play.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -1734,7 +1734,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>GameOfLifeAssets/Buttons/pause-pressed.png</string>
+											<string>GameOfLifeAssets/Buttons/play-pressed.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -2071,8 +2071,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>
