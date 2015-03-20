@@ -30,6 +30,32 @@ import UIKit
         userInteractionEnabled = true
     }
     
+    // CCNode class' touchBegan method available with Cocos2D 3.0 framework;
+    // this method is supposed to be triggered in a touch event, the framework accesses the touch when
+    // userInteractionEnabled is true (see method above); below is an override for the method:
+    
+    override func touchBegan(touch: CCTouch!, withEvent event: CCTouchEvent!) {
+        
+        var touchLocation = touch.locationInNode(self) // specifies position touched in grid
+        
+        var creature = creatureForTouchPosition(touchLocation) // defined just below
+        
+        creature.isAlive = !creature.isAlive // creates a creature on that space if it's not already taken.
+        
+        // if a value is set for a given created property (like isAlive), an action called didSet is created and triggered.
+        // ordinarily, this method will only set a value for the attribute, but since it is overriden in the Creatures class, a creature will also die if a live one is touched (which is not explicit just here).
+    }
+    
+    // this method takes an object of CGPoint class  as parameter(touchPosition) and returns a Creatures object. Arrow (->) indicates 'class of return'.
+    
+    private func creatureForTouchPosition(touchPosition: CGPoint) -> Creatures {
+        
+        var row = Int(touchPosition.y / cellHeight) // touched creature's location in the row.
+        var column = Int(touchPosition.x / cellWidth) // same as above for column.
+        
+        return gridArray[row][column]
+    }
+    
     private func setupGrid() {
         
         cellWidth = contentSize.width / CGFloat(GridColumns) // calculates the size of the grid by dividing
@@ -52,7 +78,7 @@ import UIKit
                 
                 // make creatures visible to test this method,
                 // set to false once we know we have filled the grid properly
-                creature.isAlive = true;
+                creature.isAlive = false; // working.
             }
         }
     }
