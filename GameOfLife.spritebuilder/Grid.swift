@@ -56,6 +56,78 @@ import UIKit
         return gridArray[row][column]
     }
     
+    private func countNeighbors() {
+        
+        for row in 0..<gridArray.count {
+            for column in 0..<gridArray[row].count {
+                
+                var currentCreature = gridArray[row][column]
+                currentCreature.livingNeighborsCount = 0
+                
+                for x in (row - 1)...(row + 1) {
+                    for y in (column - 1)...(column + 1) {
+                        
+                        var validIndex = isValidIndex(x: x, y: y)
+                        
+                        if validIndex && !(x == row && y == column) {
+                            
+                            var neighbor = gridArray[x][y]
+                            
+                            if neighbor.isAlive {
+                                currentCreature.livingNeighborsCount++
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    // checks if a given index is inside of the Grid. Returns a boolean.
+    private func isValidIndex(#x: Int, y: Int) -> Bool {
+        return !(x < 0 || y < 0 || x >= GridRows || y >= GridColumns)
+    }
+    
+    private func updateCreatures() {
+        // nested loop accesses every square, and therefore every creature in the grid
+        
+        var totalAlive = 0 // resets
+        
+        for row in 0..<gridArray.count {
+            
+            for column in 0..gridArray[row].count {
+                
+                var currentCreature = gridArray[row][column]
+                
+                // creature becomes alive if it has 3 neighbors, keep alive if it has 2 and dies if it has more than 3 or less than 2 neighbors.
+                if (currentCreature.livingNeighbors == 3) {
+                    currentCreature.isAlive = true
+                    totalAlive++
+                } else if (currentCreature.livingNeighbors != 2) {
+                    currentCreature.isAlive = false
+                } else { // currentCreatures.livingNeighbors == 2
+                    totalAlive++
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+    private func evolveStep() {
+        
+        //update each Creature's neighbor count
+        countNeighbors()
+        
+        //update each Creature's state
+        updateCreatures()
+        
+        //update the generation so the label's text will display the correct generation
+        generation++
+        
+    }
+    
     private func setupGrid() {
         
         cellWidth = contentSize.width / CGFloat(GridColumns) // calculates the size of the grid by dividing
