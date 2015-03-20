@@ -352,7 +352,7 @@
 										<key>displayName</key>
 										<string>genscore</string>
 										<key>memberVarAssignmentName</key>
-										<string>generation</string>
+										<string>generationLabel</string>
 										<key>memberVarAssignmentType</key>
 										<integer>1</integer>
 										<key>properties</key>
@@ -546,8 +546,6 @@
 												</array>
 											</dict>
 										</array>
-										<key>selected</key>
-										<true/>
 									</dict>
 									<dict>
 										<key>UUID</key>
@@ -768,7 +766,7 @@
 										<key>displayName</key>
 										<string>popscore</string>
 										<key>memberVarAssignmentName</key>
-										<string>totalAlive</string>
+										<string>populationLabel</string>
 										<key>memberVarAssignmentType</key>
 										<integer>1</integer>
 										<key>properties</key>
@@ -986,7 +984,7 @@
 												<key>type</key>
 												<string>StringSimple</string>
 												<key>value</key>
-												<string>Population</string>
+												<string>population</string>
 											</dict>
 											<dict>
 												<key>name</key>
@@ -2073,6 +2071,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>

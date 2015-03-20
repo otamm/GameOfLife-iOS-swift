@@ -1,4 +1,4 @@
-import Foundation;
+import Foundation
 
 class MainScene: CCNode {
     
@@ -16,10 +16,11 @@ class MainScene: CCNode {
     }
     
     func step() {
+        
         grid.evolveStep()
         
-        generationLabel.string = "\(grid.generation)"
-        populationLabel.string = "\(grid.totalAlive)"
+        generationLabel.string = "\(grid.genscore)"
+        populationLabel.string = "\(grid.popscore)"
     }
     
 }

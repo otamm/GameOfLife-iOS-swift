@@ -13,8 +13,8 @@ import UIKit
     let GridRows = 8 // constant
     let GridColumns = 10 // constant
         
-    var totalAlive = 0 // these two store the label values for the game stats in the current state.
-    var generation = 0
+    var popscore = 0 // these two store the label values for the game stats in the current state.
+    var genscore = 0
         
     private var cellWidth: CGFloat = 0 // private vars are not accessible to/from other classes.
     private var cellHeight: CGFloat = 0 // define height & width of a grid cell
@@ -91,7 +91,7 @@ import UIKit
     private func updateCreatures() {
         // nested loop accesses every square, and therefore every creature in the grid
         
-        var totalAlive = 0 // resets
+        var popscore = 0 // resets
         
         for row in 0..<gridArray.count {
             
@@ -100,13 +100,13 @@ import UIKit
                 var currentCreature = gridArray[row][column]
                 
                 // creature becomes alive if it has 3 neighbors, keep alive if it has 2 and dies if it has more than 3 or less than 2 neighbors.
-                if (currentCreature.livingNeighbors == 3) {
+                if (currentCreature.livingNeighborsCount == 3) {
                     currentCreature.isAlive = true
-                    totalAlive++
-                } else if (currentCreature.livingNeighbors != 2) {
+                    popscore++
+                } else if (currentCreature.livingNeighborsCount != 2) {
                     currentCreature.isAlive = false
-                } else { // currentCreatures.livingNeighbors == 2
-                    totalAlive++
+                } else { // currentCreatures.livingNeighborsCount == 2
+                    popscore++
                 }
                 
             }
@@ -115,7 +115,7 @@ import UIKit
         
     }
     
-    private func evolveStep() {
+   func evolveStep() {
         
         //update each Creature's neighbor count
         countNeighbors()
@@ -124,7 +124,7 @@ import UIKit
         updateCreatures()
         
         //update the generation so the label's text will display the correct generation
-        generation++
+        genscore++
         
     }
     
