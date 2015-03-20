@@ -18,7 +18,7 @@ class Creatures: CCSprite {
         
     } // connects isAlive state with visibility state; if creature is visible, then isAlive = true;
     
-    var livingNeighCount = 0 // total of living neighbours.
+    var livingNeighborsCount = 0 // total of living neighbours.
     
     convenience override init() { // will call a second initializer instead of the default Swift initializer; 'convenience' keyword specifies that.
         

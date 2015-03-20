@@ -95,7 +95,7 @@ import UIKit
         
         for row in 0..<gridArray.count {
             
-            for column in 0..gridArray[row].count {
+            for column in 0..<gridArray[row].count {
                 
                 var currentCreature = gridArray[row][column]
                 
